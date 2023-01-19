@@ -19,20 +19,20 @@ const PersonalitySummary: React.FC<Props> = ({ profile }) => {
 
     }, [profile])
 
-    console.log(data, 'hello');
-
   return (
     <>
-        <div>
-            <h1 className="text-white text-6xl">Hello</h1>
+        <div className="my-10">
+            <div className="bg-white">
+                <h1 className="text-black text-xl mx-3 pt-2 self-center">Personality Summary</h1>
+            </div>
                 {data.map((item: SummaryTableRow, i: number) => (
-                    <div key={i} className="flex flex-row justify-between border-2 border-white">
-                            <p className="text-white">
+                    <div key={i} className="flex flex-row justify-between border-l border-r border-b border-[#55504f]">
+                            <p className="text-white mx-3">
                                 {item.title}
                             </p>
-                            <div className="flex flex-row">
+                            <div className="flex flex-row mx-3">
                                 {item.values.map((val: SummaryTableValue, i: number) => (
-                                    <p key={i} className={(val.isHighlighted ? 'text-white' : 'text-[#55504F]')}>
+                                    <p key={i} className={(val.isHighlighted ? 'text-white' : 'text-[#55504F]') }>
                                         {i !== item.values.length - 1 ? val.text + '/' : val.text}
                                     </p>
                                 ))}

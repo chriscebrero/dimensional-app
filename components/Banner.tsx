@@ -18,8 +18,8 @@ const Banner: React.FC<Props> = ({ profile }) => {
   return (
     <>
         <div>
-            <h1 className="text-white text-6xl">{user}</h1>
-            <h1 className="text-white text-2xl">{url}</h1>
+            <h1 className="text-white text-5xl my-4 text-center lg:text-left">{user}</h1>
+            <h1 className="text-white text-xl my-2 text-center lg:text-left">{url}</h1>
         </div>
     </>
   )

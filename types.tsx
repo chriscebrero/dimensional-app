@@ -1,6 +1,6 @@
 export type Trait = {
     name: string;
-    colorHextCodes: string[];
+    colorHexCodes: string[];
     score: number;
 }
 

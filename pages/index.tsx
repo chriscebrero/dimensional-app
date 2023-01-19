@@ -1,18 +1,18 @@
 import Head from 'next/head'
 import { NextPage } from 'next';
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
 import Banner from '@/components/Banner'
-import type { Profile } from '@/types'
+import type { Profile, Trait } from '@/types'
 import PersonalitySummary from '@/components/PersonalitySummary';
 import Bio from '@/components/Bio';
+import MostEndorsedApp from '@/components/MostEndorsedApp';
+import SearchBar from '@/components/SearchBar';
 
 type Props = {
   profile: Profile[];
+  traits: Trait[];
 }
 
-const Home: NextPage<Props> = ({ profile }) => {
+const Home: NextPage<Props> = ({ profile, traits }) => {
   console.log(profile, 'hello from app');
   return (
     <>
@@ -22,15 +22,21 @@ const Home: NextPage<Props> = ({ profile }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div className="flex flex-row justify-around">
-          <div className="flex flex-col w-2/5 mx-16">
+      <main className="min-h-screen bg-[#181716] lg:p-32 p-4">
+        <div className='flex flex-col justify-center self-center lg:flex-row-reverse lg:justify-start'>
+          <SearchBar traits={traits}/>
+        </div>
+        <div className="flex flex-col lg:flex-row justify-around">
+          <div className="flex flex-col lg:w-2/5 lg:mx-16">
             <Bio profile={profile}/>
           </div>
-          <div className="flex flex-col w-3/5">
+          <div className="flex flex-col lg:w-3/5 lg:px-24">
+            
             <Banner profile={profile}/> 
             <PersonalitySummary profile={profile}/>
-          </div>
+            <MostEndorsedApp traits={traits}/>
+          
+        </div>
         </div>
       </main>
     </>
@@ -40,7 +46,9 @@ const Home: NextPage<Props> = ({ profile }) => {
 Home.getInitialProps = async (ctx: any) => {
   const res = await fetch('https://us-central1-dimensional-test-9f5ab.cloudfunctions.net/app/profiles')
   const json = await res.json()
-  return { profile: json };
+  const traits = await fetch('https://us-central1-dimensional-test-9f5ab.cloudfunctions.net/app/traits')
+  const traitsJson = await traits.json();
+  return { profile: json, traits: traitsJson };
 }
 
 export default Home;

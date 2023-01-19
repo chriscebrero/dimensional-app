@@ -17,7 +17,9 @@ const Bio: React.FC<Props> = ({ profile }) => {
     <>
         <div className='flex flex-col justify-center'>
             <Image className="border-8 border-green-400 rounded-full mx-auto my-4" width={280} height={280} src="/ProfilePhoto.jpg" alt="ProfilePhoto"/>
-            <h1 className="text-white text-md text-center align-center">{description}</h1>
+            <div className="flex flex-row justify-center w-3/6 mx-auto">
+                <h1 className="text-white text-md text-center align-center">{description}</h1>
+            </div>
         </div>
     </>
   )
