@@ -19,7 +19,7 @@ const MostEndorsedApp: React.FC<Props> = ({ profile }) => {
     <>
         <div>
             <h1 className="text-white text-3xl my-6">Most Endorsed Elements</h1>
-            <div className="flex flex-row overflow">
+            <div className="flex flex-row">
                 {data.map((item: Trait, i: number) => (
                     <MostEndorsedComponent key={i} hexcode={item.colorHexCodes[0]} name={item.name}/>
                 ))}

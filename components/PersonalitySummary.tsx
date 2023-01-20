@@ -21,7 +21,7 @@ const PersonalitySummary: React.FC<Props> = ({ profile }) => {
 
   return (
     <>
-        <div className="my-10">
+        <div className="my-10 lg: mr-40">
             <div className="bg-white">
                 <h1 className="text-black text-xl mx-3 pt-2 self-center">Personality Summary</h1>
             </div>

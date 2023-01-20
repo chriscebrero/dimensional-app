@@ -6,6 +6,7 @@ import PersonalitySummary from '@/components/PersonalitySummary';
 import Bio from '@/components/Bio';
 import MostEndorsedApp from '@/components/MostEndorsedApp';
 import SearchBar from '@/components/SearchBar';
+import Adjectives from '@/components/Adjectives';
 
 type Props = {
   profile: Profile[];
@@ -22,7 +23,7 @@ const Home: NextPage<Props> = ({ profile, traits }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="min-h-screen bg-[#181716] lg:p-32 p-4">
-        <div className='flex flex-col justify-center self-center lg:flex-row-reverse lg:justify-start z-20 lg:absolute lg:w-4/6 lg:ml-80'>
+        <div className='flex flex-col justify-center self-center lg:flex-row-reverse lg:justify-start z-20 ml-4 w-5/6 absolute lg:w-4/6 lg:ml-80'>
           <SearchBar traits={traits}/>
         </div>
         <div className="flex flex-col mt-40 lg:flex-row justify-around lg:mt-36">
@@ -33,6 +34,7 @@ const Home: NextPage<Props> = ({ profile, traits }) => {
             <Banner profile={profile}/> 
             <PersonalitySummary profile={profile}/>
             <MostEndorsedApp profile={profile}/>
+            <Adjectives profile={profile} />
         </div>
         </div>
       </main>
