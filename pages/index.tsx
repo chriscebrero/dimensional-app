@@ -13,7 +13,6 @@ type Props = {
 }
 
 const Home: NextPage<Props> = ({ profile, traits }) => {
-  console.log(profile, 'hello from app');
   return (
     <>
       <Head>
@@ -31,11 +30,9 @@ const Home: NextPage<Props> = ({ profile, traits }) => {
             <Bio profile={profile}/>
           </div>
           <div className="flex flex-col lg:w-3/5 lg:px-24 z-10">
-            
             <Banner profile={profile}/> 
             <PersonalitySummary profile={profile}/>
             <MostEndorsedApp profile={profile}/>
-          
         </div>
         </div>
       </main>
