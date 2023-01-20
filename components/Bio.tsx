@@ -7,7 +7,7 @@ type Props = {
 }
 
 const Bio: React.FC<Props> = ({ profile }) => {
-    const [description, setDescription] = React.useState('');
+    const [description, setDescription] = React.useState<string>('');
 
     useEffect(() => {
         setDescription(profile[0].description);

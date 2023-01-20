@@ -1,4 +1,3 @@
-import { NextPage } from 'next';
 import type { Profile } from '@/types';
 import React, { useEffect } from 'react';
 
@@ -7,8 +6,8 @@ type Props = {
 }
 
 const Banner: React.FC<Props> = ({ profile }) => {
-    const [user, setUser] = React.useState('');
-    const [url, setUrl] = React.useState('');
+    const [user, setUser] = React.useState<string>('');
+    const [url, setUrl] = React.useState<string>('');
 
     useEffect(() => {
         setUser(profile[0].userName);

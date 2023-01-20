@@ -23,18 +23,18 @@ const Home: NextPage<Props> = ({ profile, traits }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="min-h-screen bg-[#181716] lg:p-32 p-4">
-        <div className='flex flex-col justify-center self-center lg:flex-row-reverse lg:justify-start'>
+        <div className='flex flex-col justify-center self-center lg:flex-row-reverse lg:justify-start z-20 lg:absolute lg:w-4/6 lg:ml-80'>
           <SearchBar traits={traits}/>
         </div>
-        <div className="flex flex-col lg:flex-row justify-around">
+        <div className="flex flex-col mt-40 lg:flex-row justify-around lg:mt-36">
           <div className="flex flex-col lg:w-2/5 lg:mx-16">
             <Bio profile={profile}/>
           </div>
-          <div className="flex flex-col lg:w-3/5 lg:px-24">
+          <div className="flex flex-col lg:w-3/5 lg:px-24 z-10">
             
             <Banner profile={profile}/> 
             <PersonalitySummary profile={profile}/>
-            <MostEndorsedApp traits={traits}/>
+            <MostEndorsedApp profile={profile}/>
           
         </div>
         </div>
